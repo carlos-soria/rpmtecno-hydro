@@ -10,7 +10,8 @@ export function Header({header, isLoggedIn, cart}) {
   return (
     <header className="header">
       <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <strong>{shop.name}</strong>
+        {/* <strong>{shop.name}</strong> */}
+        <img className="logo" src="./logo.png"></img>
       </NavLink>
       <HeaderMenu
         menu={menu}
