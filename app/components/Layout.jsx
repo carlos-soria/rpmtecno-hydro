@@ -21,6 +21,7 @@ export function Layout({cart, children = null, footer, header, isLoggedIn}) {
       {header && <Header header={header} cart={cart} isLoggedIn={isLoggedIn} />}
       <main>{children}</main>
       <Suspense>
+        <h1>Hola mundo</h1>
         <Await resolve={footer}>
           {(footer) => <Footer menu={footer?.menu} shop={header?.shop} />}
         </Await>
