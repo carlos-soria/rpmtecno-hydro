@@ -1,6 +1,7 @@
-import {Await, NavLink} from '@remix-run/react';
+import {Await, Link, NavLink} from '@remix-run/react';
 import {Suspense} from 'react';
 import {useRootLoaderData} from '~/root';
+import ListaServicios from './ListaServicios';
 
 /**
  * @param {HeaderProps}
@@ -65,6 +66,7 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
             ? new URL(item.url).pathname
             : item.url;
         return (
+          <>
           <NavLink
             className="header-menu-item"
             end
@@ -76,6 +78,10 @@ export function HeaderMenu({menu, primaryDomainUrl, viewport}) {
           >
             {item.title}
           </NavLink>
+          <Link to={<ListaServicios/>}>
+          <NavLink>Servicios</NavLink>
+          </Link>
+          </>
         );
       })}
     </nav>
